@@ -1,0 +1,2 @@
+Write data to new file Hello this is First text file
+Some things ok if so... ::: Hello this is Second text file
