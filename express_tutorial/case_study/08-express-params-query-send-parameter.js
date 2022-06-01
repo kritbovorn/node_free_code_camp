@@ -48,7 +48,7 @@ app.get('/api/v1/query', (req, res) => {
 
     if (search) {
         sortedProducts = sortedProducts.filter((product) => {
-            return product.name.startsWith(search);         // กรองตัวอักษรที่เริ่มต้น
+            return product.name.startsWith(search);         // กรองตัวอักษรที่เริ่มต้น :  ต้อง return
         })
     }
 
@@ -58,12 +58,11 @@ app.get('/api/v1/query', (req, res) => {
 
     // เช็คว่า ใน Array  มีค่าน้อยกว่า 1
     if (sortedProducts.length < 1) {
-        return res.status(404).sendFile(path.resolve('./public/404.html'));
+        return res.status(404).sendFile(path.resolve('./public/404.html'));     // ต้อง return
     }
 
     res.status(200).json(sortedProducts);
 
-//    res.send('Hello');
 });
 
 // Nested Params
